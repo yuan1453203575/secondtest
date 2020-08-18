@@ -33,12 +33,12 @@ $.ajax({
 	dataType: 'json',
 	success: function(json) {
 		$.each(json, function(index,item) {
-			var newDom = `<li><a href=""><img src="${json[index].imgUrl}" ></a>
-				<p class="one"><span>${json[index].title1}</span></p>
-				<p class="two">${json[index].title2}</p>
-				<p class="three">${json[index].title3}</p>
-				<p class="four">${json[index].title4} <span>${json[index].title5}</span></p>
-				<p class="five">${json[index].title6}</p>
+			var newDom = `<li code="${item.code}"><a href="./detail.html"><img src="${item.imgUrl}" ></a>
+				<p class="one"><span>${item.title1}</span></p>
+				<p class="two">${item.title2}</p>
+				<p class="three">${item.title3}</p>
+				<p class="four">${item.title4} <span>${item.title5}</span></p>
+				<p class="five">${item.title6}</p>
 			</li>`;
 			$('.goods-1bot ul').append(newDom);
 		})
@@ -50,12 +50,12 @@ $.ajax({
 	dataType: 'json',
 	success: function(json) {
 		$.each(json, function(index,item) {
-			var newDom = `<li><a href=""><img src="${json[index].imgUrl}" ></a>
-				<p class="one"><span>${json[index].title1}</span></p>
-				<p class="two">${json[index].title2}</p>
-				<p class="three">${json[index].title3}</p>
-				<p class="four">${json[index].title4} <span>${json[index].title5}</span></p>
-				<p class="five">${json[index].title6}</p>
+			var newDom = `<li><a href=""><img src="${item.imgUrl}" ></a>
+				<p class="one"><span>${item.title1}</span></p>
+				<p class="two">${item.title2}</p>
+				<p class="three">${item.title3}</p>
+				<p class="four">${item.title4} <span>${item.title5}</span></p>
+				<p class="five">${item.title6}</p>
 			</li>`;
 			$('.goods-2bot ul').append(newDom);
 		})
@@ -102,4 +102,10 @@ $('.bottom-top .focus li').mouseenter(function() {
 })
 $('.bottom-top .focus li').mouseleave(function() {
 	$(this).find('div').css('display','none');
+})
+$('.goods').on('click','.goods-1 li',function() {
+	var goodsArr = [];
+	var code = $(this).attr('code');
+	goodsArr.push({"code": code});
+	localStorage.setItem('goods',JSON.stringify(goodsArr));
 })

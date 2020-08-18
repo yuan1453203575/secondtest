@@ -153,7 +153,8 @@ body {
   text-align: center;
   font-size: 12px;
   overflow: hidden;
-  color: #333333; }
+  color: #333333;
+  cursor: pointer; }
 
 .goods .one {
   margin-top: 8px; }
@@ -187,6 +188,12 @@ body {
   font-size: 12px;
   color: #999999;
   margin-bottom: 20px; }
+
+.goods .three:hover {
+  color: #e4c28c; }
+
+.goods .two:hover {
+  color: #e4c28c; }
 
 .goods-1bot li:nth-child(3) .one {
   visibility: hidden; }

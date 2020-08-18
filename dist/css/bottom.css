@@ -1,12 +1,12 @@
 .bottom-topwrap {
   width: 100%;
-  overflow: hidden;
+  height: 250px;
   background-color: white;
   margin-top: 60px; }
 
 .bottom-top {
   width: 1090px;
-  overflow: hidden;
+  height: 250px;
   padding-top: 40px;
   margin: auto;
   background-color: #FFFFFF; }
